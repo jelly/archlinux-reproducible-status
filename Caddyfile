@@ -1,0 +1,13 @@
+localhost:8881 {
+    errors stderr
+    log stdout
+
+    gzip
+
+    root dist
+
+    proxy /repro https://reproducible.archlinux.org/ {
+    	without /repro
+        transparent
+    }
+}
