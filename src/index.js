@@ -44,7 +44,7 @@ function calculateSuiteStats(data) {
     }
   }
 
-  reproPercentage = Math.round(good / data.length * 100);
+  reproPercentage = (good / data.length * 100).toFixed(1);
   return {good, bad, unknown, reproPercentage};
 }
 
