@@ -79,4 +79,13 @@ fetch(`${apiPrefix}/api/v0/pkgs/list`).then((response) => {
 
   displayStats(suites);
   displayBadPackages(suites);
+}).catch(() => {
+  const elem = document.getElementById('status');
+  const div = document.createElement('div');
+  div.textContent = 'An unexpected erorr occurred fetching the rebuild status';
+  div.className = 'notification is-danger';
+
+  elem.appendChild(div);
+  const bad = document.getElementById('bad');
+  bad.innerHTML = '';
 });
