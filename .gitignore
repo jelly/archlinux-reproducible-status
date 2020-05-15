@@ -1,3 +1,5 @@
 /node_modules
-/dist/main.js
-/dist/css
+/dist
+/public/bundle*
+
+.sass-cache

@@ -1,7 +1,3 @@
-require('./style.scss');
-
-const apiPrefix = require('Config').apiPrefix;
-
 function displayBadPackages(suites) {
   const packagesList = document.getElementById("packagesul");
   const fragment = document.createDocumentFragment();
@@ -64,7 +60,7 @@ function displayStats(suites) {
   elem.appendChild(fragment);
 }
 
-fetch(`${apiPrefix}/api/v0/pkgs/list`).then((response) => {
+fetch(`/api/v0/pkgs/list`).then((response) => {
   return response.json();
 }).then((data) => {
   const suites = {};

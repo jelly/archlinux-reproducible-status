@@ -5,20 +5,22 @@ Linux. Uses rebuilderd's API to fetch the current status of reproducibility.
 
 ## Dependencies
 
-* npm (for building/development)
+* yarn (for building/development)
 * caddy (for local development)
+* node-sass
+* browserify
+
 
 ## Development
 
 ```
-npm run watch
+./scripts/startdevelop.sh
 ```
 
-## Building
+## Deployment
+
+Creating a distributable tarball can be done with:
 
 ```
-npm install
-npm run build
+make dist
 ```
-
-The build files are located in the 'dist' directory.

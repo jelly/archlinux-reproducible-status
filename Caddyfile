@@ -4,10 +4,16 @@ localhost:8881 {
 
     gzip
 
-    root dist
+    proxy /api https://reproducible.archlinux.org/ {
+        transparent
+    }
 
-    proxy /repro https://reproducible.archlinux.org/ {
-    	without /repro
+    proxy / 127.0.0.1:9966 {
+        transparent
+    }
+
+    proxy /livereload 127.0.0.1:9966 {
+	websocket
         transparent
     }
 }
